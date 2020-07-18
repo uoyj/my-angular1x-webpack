@@ -1,0 +1,18 @@
+1 -> inicializar projeto e instalar (npm install -D webpack webpack-cli webpack-dev-server)
+2 -> package.json -> scripts -> build -> "webpack"
+3 -> start:dev: "webpack-dev-server"
+3 -> npm install -D html-webpack-plugin html-loader
+4 -> criar webpack.config.js, src, src/index.js, src/index.html
+5 -> webpack.config.js require html-webpack-plugin
+6 -> module.exports -> rules ->  test /\.html$/, loader: html-loader
+7 -> module.exports -> plugins ->  new HtmlWebpackPlugin -> template : src/index.html filename: index.html
+8 -> npm i -D @babel/core babel-loader @babel/preset-env
+9 -> module.exports -> rules ->  test /\.js$/  exclude node-modules loader: babel-loader
+10 -> npm i -D file-loader
+11 -> module.exports -> rules ->  test /\.(png|jpg|svg|gif)$/  loader: file-loader
+10 -> npm i -D node-sass style-loader css-loader sass-loader mini-css-extract-plugin
+11 -> criar main.scss
+12 -> index.js -> import main.scss
+13 -> module.exports -> rules ->  test /\.scss$/  use ["style-loader", "css-loader", "sass-loader"]
+14 -> webpack.config.js require mini-css-extract-plugin
+15 -> module.exports -> plugins ->  new MiniCssExtractPlugin -> filename : "[name].css", chunkFilename: "[id].css"
