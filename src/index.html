@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyAngularWebpack">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angular 1.x and Webpack</title>
 </head>
-<body>
-    <h1>Angular 1.x and Webpack</h1>
-    <h2>It works</h2>
-    <script scr="index.js"></script>
+<body ng-controller="AppController as vm">
+    <div>{{vm.usuario.Nome}} {{vm.usuario.Departamento}}</div>
+    <main ng-view></main>
 </body>
 </html>
